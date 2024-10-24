@@ -1,16 +1,10 @@
-// pins.h
 #ifndef PINS_H
 #define PINS_H
 
-// Definición de pines para botones de volumen
-#define GPIO_BTN_VOL_UP   37  // Botón para subir el volumen
-#define GPIO_BTN_VOL_DOWN 36  // Botón para bajar el volumen
-
-// Definición de otros pines (por ejemplo, LED de encendido)
-#define GPIO_POWER_ON      35  // LED de encendido (PWR ON)
-// Definicion de pin de la bateria
-#define ADC_BATTERY_PIN 7 // Ejemplo, usa el GPIO que corresponde para tu proyecto
-
-// Aquí puedes agregar más definiciones de pines según sea necesario
+// Definiciones de pines
+#define GPIO_POWER_ON 35          // Pin para LED de encendido
+#define GPIO_BTN_VOL_UP 37        // Pin para botón de volumen arriba
+#define GPIO_BTN_VOL_DOWN 36      // Pin para botón de volumen abajo
+#define GPIO_BATTERY_ADC 7        // Pin GPIO7 para lectura del nivel de batería
 
 #endif // PINS_H

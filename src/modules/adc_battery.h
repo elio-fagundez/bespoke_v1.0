@@ -1,14 +1,16 @@
-// adc_battery.h
 #ifndef ADC_BATTERY_H
 #define ADC_BATTERY_H
 
-#include <Arduino.h>
+// Incluir las bibliotecas necesarias
+#include <driver/adc.h>
 
-// Inicializa la medición de batería
+// Prototipos de funciones
 void initBatteryMeasurement();
-
-// Lee el nivel de la batería
 float readBatteryLevel();
 
+// Definición del canal ADC para GPIO7
+#define BATTERY_CHANNEL ADC1_CHANNEL_0 // Cambiar este valor si es necesario
+
 #endif // ADC_BATTERY_H
+
 

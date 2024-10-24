@@ -5,7 +5,7 @@
 // Configuraciones globales del proyecto
 
 // Constantes generales del proyecto
-const unsigned long BAUD_RATE = 115200; // Velocidad de comunicación serial
+const unsigned long BAUD_RATE = 9600; // Velocidad de comunicación serial
 
 // Configuración del servidor MQTT
 #define MQTT_SERVER "broker.hivemq.com" // Cambia esto por tu servidor MQTT
@@ -15,8 +15,8 @@ const unsigned long BAUD_RATE = 115200; // Velocidad de comunicación serial
 #define MQTT_TOPIC "your/topic" // Cambia esto por tu tema MQTT
 
 // Otras configuraciones
-#define WIFI_SSID "your_wifi_ssid" // Cambia por tu SSID
-#define WIFI_PASSWORD "your_wifi_password" // Cambia por tu contraseña
+#define WIFI_SSID "Tranquilidade" // Cambia por tu SSID
+#define WIFI_PASSWORD "Jovas90000" // Cambia por tu contraseña
 
 // Configuraciones de BLE
 

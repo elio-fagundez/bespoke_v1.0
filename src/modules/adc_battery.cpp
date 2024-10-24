@@ -1,9 +1,7 @@
-// adc_battery.cpp
 #include "adc_battery.h"
+#include "pins.h"  // Asegúrate de incluir pins.h para acceder a la definición de GPIO_BATTERY_ADC
 #include <driver/adc.h>
 #include <esp_adc_cal.h>
-
-#define BATTERY_CHANNEL ADC1_CHANNEL_0 // Cambia esto según el canal ADC que estés usando
 
 void initBatteryMeasurement() {
     // Configuración del ADC
@@ -19,3 +17,5 @@ float readBatteryLevel() {
     // Puedes agregar lógica para convertir a nivel de batería en porcentaje si es necesario
     return voltage; // Retornar el voltaje leído
 }
+
+

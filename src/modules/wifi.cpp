@@ -4,8 +4,8 @@
 #include "config.h"
 
 // Configura las credenciales WiFi
-const char* ssid = "your_ssid"; // Cambia esto por tu SSID
-const char* password = "your_password"; // Cambia esto por tu contraseña
+const char* ssid = WIFI_SSID; // Cambia esto por tu SSID
+const char* password = WIFI_PASSWORD; // Cambia esto por tu contraseña
 
 void initWiFi() {
     // Inicializar WiFi

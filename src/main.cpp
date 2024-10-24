@@ -8,10 +8,6 @@
 #include "modules/wifi.h"
 #include "modules/adc_battery.h"
 
-// Declaración de funciones
-void setup();
-void loop();
-
 // Configuración de variables globales
 const int ledPowerOnPin = GPIO_POWER_ON;  // Pin para el LED de encendido
 const int buttonVolUpPin = GPIO_BTN_VOL_UP; // Pin para botón de aumentar volumen
@@ -23,7 +19,7 @@ void setup() {
     digitalWrite(ledPowerOnPin, HIGH);  // Encender el LED
 
     // Inicializar Serial para depuración
-    Serial.begin(115200);
+    Serial.begin(BAUD_RATE);
     delay(1000);  // Esperar un segundo para que el puerto serie esté listo
 
     // Inicializar módulos
