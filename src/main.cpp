@@ -8,27 +8,22 @@
 #include "modules/wifi.h"
 #include "modules/adc_battery.h"
 
-// Configuración de variables globales
-const int ledPowerOnPin = GPIO_POWER_ON;  // Pin para el LED de encendido
-const int buttonVolUpPin = GPIO_BTN_VOL_UP; // Pin para botón de aumentar volumen
-const int buttonVolDownPin = GPIO_BTN_VOL_DOWN; // Pin para botón de disminuir volumen
+const int ledPowerOnPin = GPIO_POWER_ON;
+const int buttonVolUpPin = GPIO_BTN_VOL_UP;
+const int buttonVolDownPin = GPIO_BTN_VOL_DOWN;
 
 void setup() {
-    // Configurar el pin del LED como salida
     pinMode(ledPowerOnPin, OUTPUT);
-    digitalWrite(ledPowerOnPin, HIGH);  // Encender el LED
+    digitalWrite(ledPowerOnPin, HIGH);
 
-    // Inicializar Serial para depuración
     Serial.begin(BAUD_RATE);
-    delay(1000);  // Esperar un segundo para que el puerto serie esté listo
+    delay(1000);
 
-    // Inicializar módulos
-    initBLE();                   // Inicializar BLE
-    initBatteryMeasurement();    // Inicializar medición de batería
-    initMQTT();                 // Inicializar MQTT
-    initWiFi();                 // Inicializar WiFi
+    initBLE();
+    initBatteryMeasurement();
+    initMQTT();
+    initWiFi();
 
-    // Esperar a que se establezca la conexión WiFi
     Serial.println("Esperando conexión WiFi...");
     while (WiFi.status() != WL_CONNECTED) {
         delay(1000);
@@ -38,18 +33,16 @@ void setup() {
 }
 
 void loop() {
-    maintainBLE();              // Mantener la comunicación BLE
-    // Lógica adicional del bucle principal, si es necesario
-    // Por ejemplo, leer el estado del botón y ajustar el volumen
+    maintainBLE();
+
     if (digitalRead(buttonVolUpPin) == HIGH) {
         // Aumentar volumen
     }
     if (digitalRead(buttonVolDownPin) == HIGH) {
         // Disminuir volumen
     }
-    // Leer el nivel de batería y actualizar BLE
-    float batteryLevel = readBatteryLevel();  // Función que debes implementar para leer el nivel de batería
-    updateBatteryLevel(batteryLevel);          // Actualizar nivel de batería en BLE
-    delay(1000);  // Esperar un segundo antes de la siguiente iteración
-}
 
+    float batteryLevel = readBatteryLevelPercentage(); // Usa la función correcta
+    updateBatteryLevel(batteryLevel); // Asegúrate de que esta función esté definida
+    delay(1000);
+}
