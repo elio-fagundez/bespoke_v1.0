@@ -3,8 +3,6 @@
 
 // Definiciones de pines
 #define GPIO_POWER_ON 35          // Pin para LED de encendido
-#define GPIO_BTN_VOL_UP 37        // Pin para botón de volumen arriba
-#define GPIO_BTN_VOL_DOWN 36      // Pin para botón de volumen abajo
 // #define GPIO_BATTERY_ADC 7        // Pin GPIO7 para lectura del nivel de batería
 #define GPIO_BATTERY_ADC GPIO_NUM_7 // Definición del pin para la lectura de la batería (GPIO7)
 
@@ -23,9 +21,16 @@
 #define GPIO_MIC_WS      40
 #define GPIO_MIC_DATA_IN 41
 
-// Pines para el Speaker
-#define GPIO_SPK_DOUT    10
-#define GPIO_SPK_BCLK    11
-#define GPIO_SPK_LRC     12
-#define GPIO_SD_MODE     46
+
+// Define I2S Speaker connections
+#define I2S_DOUT  10
+#define I2S_BCLK  11
+#define I2S_LRC   12
+#define I2S_SD   46
+
+// Define volume control pins
+#define INC_VOL 37
+#define DEC_VOL 36
+
+
 #endif // PINS_H
