@@ -11,10 +11,16 @@ void initWiFi() {
     // Inicializar WiFi
     WiFi.begin(ssid, password);
     Serial.print("Conectando a WiFi...");
+    waitForWiFiConnection();
+}
+
+void waitForWiFiConnection() {
+    Serial.println("Esperando conexión WiFi...");
     while (WiFi.status() != WL_CONNECTED) {
         delay(1000);
         Serial.print(".");
     }
-    Serial.println("Conectado.");
+    Serial.println("\nConectado a WiFi.");
 }
+
 
