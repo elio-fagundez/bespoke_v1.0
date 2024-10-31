@@ -2,33 +2,31 @@
 #include "sd_card.h"
 #include "pins.h"
 #include <SPI.h>
-#include <Arduino.h> // Para usar funciones como Serial
+#include <Arduino.h> 
 
 bool initSDCard() {
-    // Inicializar la interfaz SPI con pines personalizados
+
     SPI.begin(SD_SCK_PIN, SD_MISO_PIN, SD_MOSI_PIN, SD_CS_PIN);
 
-    // Inicializar la tarjeta SD
     if (!SD.begin(SD_CS_PIN)) {
-        Serial.println("Fallo al montar la tarjeta SD.");
+        Serial.println("Failed to mount SD Card.");
         return false;
     }
-    Serial.println("Tarjeta SD montada correctamente.");
+    Serial.println("SD Card mounting successfully.");
     return true;
-}
-
+} // here finish initialization processs
 void writeFile(fs::FS &fs, const char *path, const char *message) {
-    Serial.printf("Abriendo archivo %s para escribir...\n", path);
+    Serial.printf("Opening File %s to write...\n", path);
 
-    File file = fs.open(path, FILE_APPEND);  // Abrir el archivo en modo de añadir (APPEND)
+    File file = fs.open(path, FILE_APPEND);  
     if (!file) {
-        Serial.println("Fallo al abrir el archivo para escribir.");
+        Serial.println("Failed opening file to write.");
         return;
     }
     if (file.print(message)) {
-        Serial.println("Datos escritos correctamente.");
+        Serial.println("Dat writed successfully.");
     } else {
-        Serial.println("Error al escribir los datos.");
+        Serial.println("Wrong writing data.");
     }
     file.close();
-}
+} // here finish writing processs

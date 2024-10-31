@@ -1,18 +1,16 @@
+//Adc Battery.cpp
 #include "adc_battery.h"
-#include "pins.h"  // Asegúrate de incluir pins.h para acceder a la definición de GPIO_BATTERY_ADC
-#include <Arduino.h> // Incluye la biblioteca de Arduino
-
-// Definir el pin GPIO donde se conectará la señal analógica
-// adc_battery.cpp
+#include "pins.h"  
+#include <Arduino.h> 
 #include "adc_battery.h"
 #include "pins.h"
 #include <Arduino.h>
 
-const int analogPin = GPIO_BATTERY_ADC; // Define el pin de acuerdo a lo que hayas configurado en pins.h
+const int analogPin = GPIO_BATTERY_ADC; 
 
 void initBatteryMeasurement() {
     pinMode(analogPin, INPUT);
-}
+} // here finish inizialitazion process
 
 float readBatteryLevelPercentage() {
     int analogValue = analogRead(analogPin);
@@ -21,5 +19,5 @@ float readBatteryLevelPercentage() {
     if (batteryPercentage > 100.0) batteryPercentage = 100.0;
     if (batteryPercentage < 0.0) batteryPercentage = 0.0;
     return batteryPercentage;
-}
+} // here finish batery reading process
 
