@@ -9,4 +9,6 @@ const unsigned long BAUD_RATE = 9600;
 #define WIFI_SSID "Tranquilidade" 
 #define WIFI_PASSWORD "Jovas90000" 
 
+// API Credentials 
+
 #endif // CONFIG_H
