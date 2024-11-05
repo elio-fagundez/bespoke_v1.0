@@ -38,7 +38,7 @@
 
 void setup() {
   // Inicializar comunicación serial a 115200 baudios
-  Serial.begin(115200);
+  Serial.begin(9600);
 
   // Esperar a que el puerto serie esté listo (opcional)
   while (!Serial) {;}
